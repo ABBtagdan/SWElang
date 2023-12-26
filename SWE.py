@@ -8,7 +8,7 @@ def main():
 
 
     lexer = Lexer(source)
-    emitter = Emitter("output/"+argv[2]+".py")
+    emitter = Emitter(argv[2]+".py")
     parser = Parser(lexer, emitter)
 
     parser.program()

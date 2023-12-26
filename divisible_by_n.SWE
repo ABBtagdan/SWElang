@@ -1,0 +1,31 @@
+
+
+# -define variables- #
+n = 0
+div = -1
+# ------------------ #
+
+SKRIV "ALLA TAL UNDER 1000000000 DELBARA MED?" 
+HÄMTA div
+SKRIV "--------------------"
+MEDANS n < 1000000000 REPETERA
+    n = n+1
+
+    x = 0
+    MEDANS x < n REPETERA
+        a = div
+        MEDANS x+a < n REPETERA
+            a = a*2
+        \
+        OM a == div DÅ
+            x = x+a
+        \
+        OM a != div DÅ
+            x = x+a/2
+        \
+    \
+
+    OM x == n DÅ
+        SKRIV n
+    \
+\

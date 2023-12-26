@@ -1,0 +1,17 @@
+SKRIV "SPELARE 1: VÄLJ NUMMER"
+x=0
+HÄMTA x
+i = 0
+MEDANS i < 100 REPETERA
+    SKRIV ""
+    i = i + 1
+\
+guess = -1.0876
+tries = 0
+MEDANS guess != x REPETERA
+    SKRIV "SPELARE 2, GISSA PÅ SPELARE 1:s NUMMER"
+    HÄMTA guess
+    tries = tries + 1
+\
+SKRIV "RÄTT!, DET TOG SÅ HÄR MÅNGA FÖRSÖK: "
+SKRIV tries

@@ -1,0 +1,48 @@
+x = 0
+
+SKRIV "n: "
+
+n = 0
+
+HÄMTA n
+
+SEKTION iteration
+MEDANS n > 1 REPETERA
+    x = n
+
+    KÖR xDelbarMed2
+\
+
+KÖR slut
+
+SEKTION checkaDelbarhet
+        OM x != 1 DÅ
+            x = 0
+        n = 3*n+1
+    \
+        OM x == 1 DÅ
+        n = n/2
+    \
+SKRIV n
+KÖR iteration
+
+# Kolla om värdet på x är delbart med två
+# ----------------- #
+SEKTION xDelbarMed2
+CONTROLLNUMBER = 1
+x = x/2
+MEDANS x >= CONTROLLNUMBER REPETERA
+CONTROLLNUMBER = CONTROLLNUMBER * 2
+\
+MEDANS CONTROLLNUMBER > x REPETERA
+CONTROLLNUMBER = CONTROLLNUMBER - 1
+\
+SKRIV "#----#"
+x = x / CONTROLLNUMBER
+
+KÖR checkaDelbarhet
+# ----------------- #
+
+# Avsluta programmet
+# -------------- #
+SEKTION slut

@@ -1,0 +1,87 @@
+
+
+factN = 0
+factRES = 1
+count = 0
+
+n = 1
+r = 1
+
+KÖR loop0
+
+SEKTION loop0
+    SKRIV "------"
+    SKRIV n
+    SKRIV "------"
+    OM n <= 100 DÅ
+        KÖR loop1    
+    \
+    KÖR slut
+
+SEKTION loop1
+    SKRIV r
+    OM r <= n DÅ
+        KÖR eval
+    \
+    r = 1
+    n = n+1
+    KÖR loop0
+
+SEKTION eval
+val = 0
+factN = n
+J = 0
+KÖR fact
+SEKTION J0
+val = factRES
+OM val <= 1000000 DÅ
+    r = r+ 1
+    KÖR loop1
+\
+factN = r
+J = 1
+KÖR fact
+SEKTION J1
+val = val/factRES
+OM val <= 1000000 DÅ
+    r = r+ 1
+    KÖR loop1
+\
+factN = n-r
+J = 2
+KÖR fact
+SEKTION J2
+val = val/factRES
+OM val <= 1000000 DÅ
+    r = r+ 1
+    KÖR loop1
+\
+count = count + 1
+r = r+1
+KÖR loop1
+
+
+
+
+SEKTION fact
+    factRES = 1
+    i = 2
+    MEDANS i <= factN REPETERA
+        factRES = factRES*i
+        i = i+1
+    \
+    KÖR JUMP
+
+SEKTION JUMP
+    OM J == 0 DÅ
+        KÖR J0
+    \
+    OM J == 1 DÅ
+        KÖR J1
+    \
+    OM J == 2 DÅ
+        KÖR J2
+    \
+
+SEKTION slut
+SKRIV count

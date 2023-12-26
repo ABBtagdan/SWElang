@@ -1,0 +1,53 @@
+# SUM OF ALL MULTIPLES OF 3 OR 5 BELOW 1000
+
+
+# -DECLARING VARIABLES- #
+n = 0
+sum = 0
+check3 = -1
+check5 = -1
+# --------------------- #
+
+SEKTION loop0
+    n = n +1
+    MEDANS n < 1000 REPETERA
+        KÖR checkaDelbarhet
+    \
+    KÖR slut
+
+# -KOLLA DELBARHET MED 3 o 5 OCH ADDERA ISF- #
+
+SEKTION checkaDelbarhet
+    check3 = n
+    check5 = n
+
+    # KOLLA 3 #
+
+    MEDANS check3 >= 3 REPETERA
+        check3 = check3 - 3
+    \
+    OM check3 == 0 DÅ
+        sum = sum + n
+    KÖR loop0
+    \
+
+    # ------ #
+
+    # KOLLA 5 #
+
+    MEDANS check5 >= 5 REPETERA
+        check5 = check5 - 5
+    \
+    OM check5 == 0 DÅ
+        sum = sum + n
+    \
+    KÖR loop0
+
+    # ------ #
+
+# ---------------------------------------- #
+
+
+
+SEKTION slut
+SKRIV sum

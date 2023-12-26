@@ -1,0 +1,41 @@
+
+
+# -define variables- #
+n1 = 0
+n2 = 1
+n3 = 1
+sum = 0
+# ------------------ #
+
+MEDANS n2 < 4000000 REPETERA
+    n3 = n1 + n2
+    n1 = n2
+    n2 = n3
+    
+
+    x = 0
+    SKRIV n2
+    MEDANS x < n2 REPETERA
+        a = 2
+        MEDANS x+a < n2 REPETERA
+            a = a*2
+        \
+        OM a == 2 DÅ
+            x = x+a
+        \
+        OM a != 2 DÅ
+            x = x+a/2
+        \
+        SKRIV x
+    \
+
+    SKRIV "-------"
+    OM x == n2 DÅ
+        sum = sum + n2
+    \
+\
+
+SKRIV sum
+
+    
+    
